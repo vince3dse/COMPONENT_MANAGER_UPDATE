@@ -1,8 +1,8 @@
 {
   "AppId": "ComponentManager",
-  "LatestVersion": "1.0.4",
+  "LatestVersion": "1.0.5",
   "Mandatory": false,
-  "ZipUrl": "https://raw.githubusercontent.com/vince3dse/COMPONENT_MANAGER_UPDATE/main/releases/ComponentManager_1.0.4.zip",
-  "Checksum": "764AD3CB9D522A26D9FA547040B0ACAC7B23D736234F40671BC9726377F62A90",
-  "Notes": "Release 1.0.4"
+  "ZipUrl": "https://raw.githubusercontent.com/vince3dse/COMPONENT_MANAGER_UPDATE/main/releases/ComponentManager_1.0.5.zip",
+  "Checksum": "DC7439F45EEECE8923B5E3230E6E028F5A81380E06BF3FD78FB6AF856258A4DA",
+  "Notes": "Release 1.0.5"
 }

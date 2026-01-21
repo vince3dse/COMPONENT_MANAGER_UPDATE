@@ -1,0 +1,248 @@
+Stiamo lavorando sul modulo Properties Control di Component Manager.
+
+Quando scrivi o modifichi regole, DEVI SEMPRE usare il formato JSON
+ESATTAMENTE compatibile con la serializzazione dell’app, come questo esempio:
+
+- Array di PropertyRule
+- Proprietà in PascalCase
+- Enum SEMPRE come interi (non stringhe)
+- Campi SEMPRE presenti:
+  RuleId (GUID)
+  Name
+  Description
+  IsActive
+  Priority
+  Group
+  IsElse
+  StopProcessing
+  Conditions
+  Actions
+
+RuleCondition:
+- SourceProperty : string
+- Operator : int  (enum ComparisonOperator)
+- ComparisonValue : string
+- CaseSensitive : bool
+
+ComparisonOperator enum:
+0 Equals
+1 NotEquals
+2 Contains
+3 StartsWith
+4 EndsWith
+5 NotStartsWithAny
+6 NotEndsWithAny
+7 Between
+8 GreaterThan
+9 LessThan
+
+PropertyAction:
+- TargetProperty : string
+- Type : int (enum ActionType)
+- Value : string | null
+- Formula : string | null
+- InputProperties : []
+- ApplyRounding : bool
+
+ActionType enum:
+0 Set
+1 Calculate
+2 Concatenate
+3 Clear
+
+REGOLE FONDAMENTALI:
+- Nessuna regola di sistema: solo regole utente
+- Nessuna logica imperativa (if / continue / exit): tutto tramite Conditions + Priority + Group + IsElse
+- Le esclusioni si fanno con StopProcessing = true
+- I gruppi IF / ELSE si fanno con Group + IsElse
+- Le formule usano solo token supportati (HEIGHT, WIDTH, LENGTH, LENGTH_MAX, MATERIAL, ISSHEETMETAL, ecc.)
+- NON usare mai operatori o campi non esistenti nel modello
+
+Ogni JSON prodotto deve essere caricabile dall’app SENZA MODIFICHE.
+
+Di seguito esempio di formattazione multiregola 
+
+[
+  {
+    "RuleId": "11111111-1111-1111-1111-111111111111",
+    "Name": "ESCLUSIONE_PREFISSI",
+    "Description": "Esclude componenti con prefissi non gestiti",
+    "IsActive": true,
+    "Priority": 1000,
+    "Group": "",
+    "IsElse": false,
+    "StopProcessing": true,
+    "Conditions": [
+      {
+        "SourceProperty": "FILENAME_UPPER",
+        "Operator": 5,
+        "ComparisonValue": "SNC;NAT;CAT;D007;MCA;MCE;CL;L0;L1;L2;L3;L4;L5;L6;L7;L8;L9",
+        "CaseSensitive": false
+      }
+    ],
+    "Actions": []
+  },
+  {
+    "RuleId": "22222222-2222-2222-2222-222222222222",
+    "Name": "DIMENSIONI_BASE",
+    "Description": "Scrive LUNGHEZZA, LARGHEZZA, ALTEZZA",
+    "IsActive": true,
+    "Priority": 900,
+    "Group": "",
+    "IsElse": false,
+    "StopProcessing": false,
+    "Conditions": [],
+    "Actions": [
+      {
+        "TargetProperty": "LUNGHEZZA",
+        "Type": 0,
+        "Value": "{LENGTH}",
+        "Formula": null,
+        "InputProperties": [],
+        "ApplyRounding": true
+      },
+      {
+        "TargetProperty": "LARGHEZZA",
+        "Type": 0,
+        "Value": "{WIDTH}",
+        "Formula": null,
+        "InputProperties": [],
+        "ApplyRounding": true
+      },
+      {
+        "TargetProperty": "ALTEZZA",
+        "Type": 0,
+        "Value": "{HEIGHT}",
+        "Formula": null,
+        "InputProperties": [],
+        "ApplyRounding": true
+      }
+    ]
+  },
+  {
+    "RuleId": "33333333-3333-3333-3333-333333333333",
+    "Name": "MATERIALE_PART",
+    "Description": "Scrive MATERIALE per le parti",
+    "IsActive": true,
+    "Priority": 800,
+    "Group": "",
+    "IsElse": false,
+    "StopProcessing": false,
+    "Conditions": [
+      {
+        "SourceProperty": "DOCUMENT_KIND",
+        "Operator": 0,
+        "ComparisonValue": "PART",
+        "CaseSensitive": false
+      }
+    ],
+    "Actions": [
+      {
+        "TargetProperty": "MATERIALE",
+        "Type": 0,
+        "Value": "{MATERIAL}",
+        "Formula": null,
+        "InputProperties": [],
+        "ApplyRounding": true
+      }
+    ]
+  },
+  {
+    "RuleId": "44444444-4444-4444-4444-444444444444",
+    "Name": "D040_LATI",
+    "Description": "D040: LATO1 e LATO2 dalle due misure pi\u00F9 piccole",
+    "IsActive": true,
+    "Priority": 700,
+    "Group": "",
+    "IsElse": false,
+    "StopProcessing": false,
+    "Conditions": [
+      {
+        "SourceProperty": "FILENAME_UPPER",
+        "Operator": 3,
+        "ComparisonValue": "D040",
+        "CaseSensitive": false
+      }
+    ],
+    "Actions": [
+      {
+        "TargetProperty": "LATO1",
+        "Type": 1,
+        "Value": null,
+        "Formula": "MIN(HEIGHT, WIDTH, LENGTH)",
+        "InputProperties": [],
+        "ApplyRounding": true
+      },
+      {
+        "TargetProperty": "LATO2",
+        "Type": 1,
+        "Value": null,
+        "Formula": "MIN(MAX(HEIGHT, WIDTH, LENGTH), AVG(HEIGHT, WIDTH, LENGTH))",
+        "InputProperties": [],
+        "ApplyRounding": true
+      }
+    ]
+  },
+  {
+    "RuleId": "55555555-5555-5555-5555-555555555555",
+    "Name": "D032_QTA_MATERIALE_AREA",
+    "Description": "D032 non lamiera: QTA_MATERIALE in m\u00B2",
+    "IsActive": true,
+    "Priority": 600,
+    "Group": "QTA_MATERIALE",
+    "IsElse": false,
+    "StopProcessing": false,
+    "Conditions": [
+      {
+        "SourceProperty": "FILENAME_UPPER",
+        "Operator": 3,
+        "ComparisonValue": "D032",
+        "CaseSensitive": false
+      },
+      {
+        "SourceProperty": "ISSHEETMETAL",
+        "Operator": 0,
+        "ComparisonValue": "false",
+        "CaseSensitive": false
+      }
+    ],
+    "Actions": [
+      {
+        "TargetProperty": "QTA_MATERIALE",
+        "Type": 1,
+        "Value": null,
+        "Formula": "(MAX(HEIGHT, WIDTH, LENGTH) / 1000) * (AVG(HEIGHT, WIDTH, LENGTH) / 1000)",
+        "InputProperties": [],
+        "ApplyRounding": true
+      }
+    ]
+  },
+  {
+    "RuleId": "66666666-6666-6666-6666-666666666666",
+    "Name": "QTA_MATERIALE_STANDARD",
+    "Description": "QTA_MATERIALE standard per parti non lamiera",
+    "IsActive": true,
+    "Priority": 500,
+    "Group": "QTA_MATERIALE",
+    "IsElse": true,
+    "StopProcessing": false,
+    "Conditions": [
+      {
+        "SourceProperty": "ISSHEETMETAL",
+        "Operator": 0,
+        "ComparisonValue": "false",
+        "CaseSensitive": false
+      }
+    ],
+    "Actions": [
+      {
+        "TargetProperty": "QTA_MATERIALE",
+        "Type": 1,
+        "Value": null,
+        "Formula": "LENGTH_MAX / 1000",
+        "InputProperties": [],
+        "ApplyRounding": true
+      }
+    ]
+  }
+]

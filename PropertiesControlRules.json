@@ -1,14 +1,18 @@
-﻿[
+[
   {
     "RuleId": "11111111-1111-1111-1111-111111111111",
     "Name": "ESCLUSIONE_PREFISSI",
     "Description": "Esclude componenti con prefissi non gestiti",
     "IsActive": true,
+    "Priority": 1000,
+    "Group": "",
+    "IsElse": false,
+    "StopProcessing": true,
     "Conditions": [
       {
         "SourceProperty": "FILENAME_UPPER",
         "Operator": 5,
-        "ComparisonValue": "SNC;NAT;CAT;D007;MCA;MCE;CL;L",
+        "ComparisonValue": "SNC;NAT;CAT;D007;MCA;MCE;CL;L0;L1;L2;L3;L4;L5;L6;L7;L8;L9",
         "CaseSensitive": false
       }
     ],
@@ -16,380 +20,17 @@
   },
   {
     "RuleId": "22222222-2222-2222-2222-222222222222",
-    "Name": "TEST_MOLTIPLICAZIONE_SEMPLICE",
-    "Description": "Test 1: 1000*HEIGHT - Moltiplicazione con numero",
+    "Name": "DIMENSIONI_BASE",
+    "Description": "Scrive LUNGHEZZA, LARGHEZZA, ALTEZZA",
     "IsActive": true,
-    "Conditions": [
-      {
-        "SourceProperty": "FILENAME_UPPER",
-        "Operator": 3,
-        "ComparisonValue": "TEST",
-        "CaseSensitive": false
-      }
-    ],
+    "Priority": 900,
+    "Group": "",
+    "IsElse": false,
+    "StopProcessing": false,
+    "Conditions": [],
     "Actions": [
       {
-        "TargetProperty": "PROPRIETA_TEST_1",
-        "Type": 1,
-        "Value": null,
-        "Formula": "1000*HEIGHT",
-        "InputProperties": [],
-        "ApplyRounding": true
-      }
-    ]
-  },
-  {
-    "RuleId": "33333333-3333-3333-3333-333333333333",
-    "Name": "TEST_PRODOTTO_DIMENSIONI",
-    "Description": "Test 2: LENGTH*WIDTH - Prodotto lunghezza x larghezza",
-    "IsActive": true,
-    "Conditions": [
-      {
-        "SourceProperty": "FILENAME_UPPER",
-        "Operator": 3,
-        "ComparisonValue": "TEST",
-        "CaseSensitive": false
-      }
-    ],
-    "Actions": [
-      {
-        "TargetProperty": "PROPRIETA_TEST_2",
-        "Type": 1,
-        "Value": null,
-        "Formula": "LENGTH*WIDTH",
-        "InputProperties": [],
-        "ApplyRounding": true
-      }
-    ]
-  },
-  {
-    "RuleId": "44444444-4444-4444-4444-444444444444",
-    "Name": "TEST_NUMERO_DECIMALE",
-    "Description": "Test 3: BOUNDINGBOX_MAX*5.5 - Moltiplicazione con decimale",
-    "IsActive": true,
-    "Conditions": [
-      {
-        "SourceProperty": "FILENAME_UPPER",
-        "Operator": 3,
-        "ComparisonValue": "TEST",
-        "CaseSensitive": false
-      }
-    ],
-    "Actions": [
-      {
-        "TargetProperty": "PROPRIETA_TEST_3",
-        "Type": 1,
-        "Value": null,
-        "Formula": "BOUNDINGBOX_MAX*5.5",
-        "InputProperties": [],
-        "ApplyRounding": true
-      }
-    ]
-  },
-  {
-    "RuleId": "55555555-5555-5555-5555-555555555555",
-    "Name": "TEST_ROUND_SEMPLICE",
-    "Description": "Test 4: ROUND(55.322342) - Arrotonda valore fisso",
-    "IsActive": true,
-    "Conditions": [
-      {
-        "SourceProperty": "FILENAME_UPPER",
-        "Operator": 3,
-        "ComparisonValue": "TEST",
-        "CaseSensitive": false
-      }
-    ],
-    "Actions": [
-      {
-        "TargetProperty": "PROPRIETA_TEST_4",
-        "Type": 1,
-        "Value": null,
-        "Formula": "ROUND(55.322342)",
-        "InputProperties": [],
-        "ApplyRounding": true
-      }
-    ]
-  },
-  {
-    "RuleId": "66666666-6666-6666-6666-666666666666",
-    "Name": "TEST_CONVERSIONE_AREA_M2",
-    "Description": "Test 5: (LENGTH*WIDTH)/1000000 - Conversione area in m²",
-    "IsActive": true,
-    "Conditions": [
-      {
-        "SourceProperty": "FILENAME_UPPER",
-        "Operator": 3,
-        "ComparisonValue": "TEST",
-        "CaseSensitive": false
-      }
-    ],
-    "Actions": [
-      {
-        "TargetProperty": "PROPRIETA_TEST_5",
-        "Type": 1,
-        "Value": null,
-        "Formula": "(LENGTH*WIDTH)/1000000",
-        "InputProperties": [],
-        "ApplyRounding": true
-      }
-    ]
-  },
-  {
-    "RuleId": "77777777-7777-7777-7777-777777777777",
-    "Name": "TEST_PITAGORA_DIAGONALE",
-    "Description": "Test 6: SQRT((LENGTH*LENGTH)+(WIDTH*WIDTH)) - Diagonale 2D",
-    "IsActive": true,
-    "Conditions": [
-      {
-        "SourceProperty": "FILENAME_UPPER",
-        "Operator": 3,
-        "ComparisonValue": "TEST",
-        "CaseSensitive": false
-      }
-    ],
-    "Actions": [
-      {
-        "TargetProperty": "PROPRIETA_TEST_6",
-        "Type": 1,
-        "Value": null,
-        "Formula": "SQRT((LENGTH*LENGTH)+(WIDTH*WIDTH))",
-        "InputProperties": [],
-        "ApplyRounding": true
-      }
-    ]
-  },
-  {
-    "RuleId": "88888888-8888-8888-8888-888888888888",
-    "Name": "TEST_PERIMETRO",
-    "Description": "Test 7: (LENGTH+WIDTH)*2 - Calcolo perimetro",
-    "IsActive": true,
-    "Conditions": [
-      {
-        "SourceProperty": "FILENAME_UPPER",
-        "Operator": 3,
-        "ComparisonValue": "TEST",
-        "CaseSensitive": false
-      }
-    ],
-    "Actions": [
-      {
-        "TargetProperty": "PROPRIETA_TEST_7",
-        "Type": 1,
-        "Value": null,
-        "Formula": "(LENGTH+WIDTH)*2",
-        "InputProperties": [],
-        "ApplyRounding": true
-      }
-    ]
-  },
-  {
-    "RuleId": "99999999-9999-9999-9999-999999999999",
-    "Name": "TEST_AREA_CENTIMETRI_QUADRI",
-    "Description": "Test 8: ROUND((LENGTH*WIDTH)/1000) - Area in cm² arrotondata",
-    "IsActive": true,
-    "Conditions": [
-      {
-        "SourceProperty": "FILENAME_UPPER",
-        "Operator": 3,
-        "ComparisonValue": "TEST",
-        "CaseSensitive": false
-      }
-    ],
-    "Actions": [
-      {
-        "TargetProperty": "PROPRIETA_TEST_8",
-        "Type": 1,
-        "Value": null,
-        "Formula": "ROUND((LENGTH*WIDTH)/1000)",
-        "InputProperties": [],
-        "ApplyRounding": true
-      }
-    ]
-  },
-  {
-    "RuleId": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
-    "Name": "TEST_PESO_ACCIAIO",
-    "Description": "Test 9: (LENGTH/100)*(WIDTH/100)*(HEIGHT/100)*7.85 - Peso acciaio (densità 7.85 kg/dm³)",
-    "IsActive": true,
-    "Conditions": [
-      {
-        "SourceProperty": "FILENAME_UPPER",
-        "Operator": 3,
-        "ComparisonValue": "TEST",
-        "CaseSensitive": false
-      }
-    ],
-    "Actions": [
-      {
-        "TargetProperty": "PROPRIETA_TEST_9",
-        "Type": 1,
-        "Value": null,
-        "Formula": "(LENGTH/100)*(WIDTH/100)*(HEIGHT/100)*7.85",
-        "InputProperties": [],
-        "ApplyRounding": true
-      }
-    ]
-  },
-  {
-    "RuleId": "bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb",
-    "Name": "TEST_VOLUME_LAMIERA",
-    "Description": "Test 10: (LENGTH/1000)*(WIDTH/1000)*0.001 - Volume lamiera 1mm in m³",
-    "IsActive": true,
-    "Conditions": [
-      {
-        "SourceProperty": "FILENAME_UPPER",
-        "Operator": 3,
-        "ComparisonValue": "TEST",
-        "CaseSensitive": false
-      }
-    ],
-    "Actions": [
-      {
-        "TargetProperty": "PROPRIETA_TEST_10",
-        "Type": 1,
-        "Value": null,
-        "Formula": "(LENGTH/1000)*(WIDTH/1000)*0.001",
-        "InputProperties": [],
-        "ApplyRounding": true
-      }
-    ]
-  },
-  {
-    "RuleId": "cccccccc-cccc-cccc-cccc-cccccccccccc",
-    "Name": "TEST_MAX_TRE_DIMENSIONI",
-    "Description": "Test 11: MAX(LENGTH, MAX(WIDTH, HEIGHT)) - Massimo tra tre dimensioni",
-    "IsActive": true,
-    "Conditions": [
-      {
-        "SourceProperty": "FILENAME_UPPER",
-        "Operator": 3,
-        "ComparisonValue": "TEST",
-        "CaseSensitive": false
-      }
-    ],
-    "Actions": [
-      {
-        "TargetProperty": "PROPRIETA_TEST_11",
-        "Type": 1,
-        "Value": null,
-        "Formula": "MAX(LENGTH, MAX(WIDTH, HEIGHT))",
-        "InputProperties": [],
-        "ApplyRounding": true
-      }
-    ]
-  },
-  {
-    "RuleId": "dddddddd-dddd-dddd-dddd-dddddddddddd",
-    "Name": "TEST_DIFFERENZA_MAX_MIN",
-    "Description": "Test 12: LENGTH_MAX - HEIGHT - Differenza tra dim max e min",
-    "IsActive": true,
-    "Conditions": [
-      {
-        "SourceProperty": "FILENAME_UPPER",
-        "Operator": 3,
-        "ComparisonValue": "TEST",
-        "CaseSensitive": false
-      }
-    ],
-    "Actions": [
-      {
-        "TargetProperty": "PROPRIETA_TEST_12",
-        "Type": 1,
-        "Value": null,
-        "Formula": "LENGTH_MAX - HEIGHT",
-        "InputProperties": [],
-        "ApplyRounding": true
-      }
-    ]
-  },
-  {
-    "RuleId": "eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee",
-    "Name": "TEST_MEDIA_DIMENSIONI",
-    "Description": "Test 13: AVG(LENGTH, WIDTH, HEIGHT) - Media delle tre dimensioni",
-    "IsActive": true,
-    "Conditions": [
-      {
-        "SourceProperty": "FILENAME_UPPER",
-        "Operator": 3,
-        "ComparisonValue": "TEST",
-        "CaseSensitive": false
-      }
-    ],
-    "Actions": [
-      {
-        "TargetProperty": "PROPRIETA_TEST_13",
-        "Type": 1,
-        "Value": null,
-        "Formula": "AVG(LENGTH, WIDTH, HEIGHT)",
-        "InputProperties": [],
-        "ApplyRounding": true
-      }
-    ]
-  },
-  {
-    "RuleId": "ffffffff-ffff-ffff-ffff-ffffffffffff",
-    "Name": "TEST_DIAGONALE_3D",
-    "Description": "Test 14: SQRT((LENGTH*LENGTH)+(WIDTH*WIDTH)+(HEIGHT*HEIGHT)) - Diagonale dello spazio 3D",
-    "IsActive": true,
-    "Conditions": [
-      {
-        "SourceProperty": "FILENAME_UPPER",
-        "Operator": 3,
-        "ComparisonValue": "TEST",
-        "CaseSensitive": false
-      }
-    ],
-    "Actions": [
-      {
-        "TargetProperty": "PROPRIETA_TEST_14",
-        "Type": 1,
-        "Value": null,
-        "Formula": "SQRT((LENGTH*LENGTH)+(WIDTH*WIDTH)+(HEIGHT*HEIGHT))",
-        "InputProperties": [],
-        "ApplyRounding": true
-      }
-    ]
-  },
-  {
-    "RuleId": "10101010-1010-1010-1010-101010101010",
-    "Name": "TEST_COSTO_CON_SCONTO",
-    "Description": "Test 15: (LENGTH*WIDTH)/1000000 * 50 * 0.9 - Area × prezzo × sconto 10%",
-    "IsActive": true,
-    "Conditions": [
-      {
-        "SourceProperty": "FILENAME_UPPER",
-        "Operator": 3,
-        "ComparisonValue": "TEST",
-        "CaseSensitive": false
-      }
-    ],
-    "Actions": [
-      {
-        "TargetProperty": "PROPRIETA_TEST_15",
-        "Type": 1,
-        "Value": null,
-        "Formula": "(LENGTH*WIDTH)/1000000 * 50 * 0.9",
-        "InputProperties": [],
-        "ApplyRounding": true
-      }
-    ]
-  },
-  {
-    "RuleId": "ffffffff-ffff-ffff-ffff-ffff11111111",
-    "Name": "TEST_SET_STATICI",
-    "Description": "Test bonus: SET di dimensioni da bounding box",
-    "IsActive": true,
-    "Conditions": [
-      {
-        "SourceProperty": "FILENAME_UPPER",
-        "Operator": 3,
-        "ComparisonValue": "TEST",
-        "CaseSensitive": false
-      }
-    ],
-    "Actions": [
-      {
-        "TargetProperty": "PROPRIETA_LUNGHEZZA",
+        "TargetProperty": "LUNGHEZZA",
         "Type": 0,
         "Value": "{LENGTH}",
         "Formula": null,
@@ -397,7 +38,7 @@
         "ApplyRounding": true
       },
       {
-        "TargetProperty": "PROPRIETA_LARGHEZZA",
+        "TargetProperty": "LARGHEZZA",
         "Type": 0,
         "Value": "{WIDTH}",
         "Formula": null,
@@ -405,10 +46,136 @@
         "ApplyRounding": true
       },
       {
-        "TargetProperty": "PROPRIETA_ALTEZZA",
+        "TargetProperty": "ALTEZZA",
         "Type": 0,
         "Value": "{HEIGHT}",
         "Formula": null,
+        "InputProperties": [],
+        "ApplyRounding": true
+      }
+    ]
+  },
+  {
+    "RuleId": "33333333-3333-3333-3333-333333333333",
+    "Name": "MATERIALE_PART",
+    "Description": "Scrive MATERIALE per le parti",
+    "IsActive": true,
+    "Priority": 800,
+    "Group": "",
+    "IsElse": false,
+    "StopProcessing": false,
+    "Conditions": [
+      {
+        "SourceProperty": "DOCUMENT_KIND",
+        "Operator": 0,
+        "ComparisonValue": "PART",
+        "CaseSensitive": false
+      }
+    ],
+    "Actions": [
+      {
+        "TargetProperty": "MATERIALE",
+        "Type": 0,
+        "Value": "{MATERIAL}",
+        "Formula": null,
+        "InputProperties": [],
+        "ApplyRounding": true
+      }
+    ]
+  },
+  {
+    "RuleId": "44444444-4444-4444-4444-444444444444",
+    "Name": "D040_LATI",
+    "Description": "D040: LATO1 e LATO2 dalle due misure pi\u00F9 piccole",
+    "IsActive": true,
+    "Priority": 700,
+    "Group": "",
+    "IsElse": false,
+    "StopProcessing": false,
+    "Conditions": [
+      {
+        "SourceProperty": "FILENAME_UPPER",
+        "Operator": 3,
+        "ComparisonValue": "D040",
+        "CaseSensitive": false
+      }
+    ],
+    "Actions": [
+      {
+        "TargetProperty": "LATO1",
+        "Type": 1,
+        "Value": null,
+        "Formula": "MIN(HEIGHT, WIDTH, LENGTH)",
+        "InputProperties": [],
+        "ApplyRounding": true
+      },
+      {
+        "TargetProperty": "LATO2",
+        "Type": 1,
+        "Value": null,
+        "Formula": "MIN(MAX(HEIGHT, WIDTH, LENGTH), AVG(HEIGHT, WIDTH, LENGTH))",
+        "InputProperties": [],
+        "ApplyRounding": true
+      }
+    ]
+  },
+  {
+    "RuleId": "55555555-5555-5555-5555-555555555555",
+    "Name": "D032_QTA_MATERIALE_AREA",
+    "Description": "D032 non lamiera: QTA_MATERIALE in m\u00B2",
+    "IsActive": true,
+    "Priority": 600,
+    "Group": "QTA_MATERIALE",
+    "IsElse": false,
+    "StopProcessing": false,
+    "Conditions": [
+      {
+        "SourceProperty": "FILENAME_UPPER",
+        "Operator": 3,
+        "ComparisonValue": "D032",
+        "CaseSensitive": false
+      },
+      {
+        "SourceProperty": "ISSHEETMETAL",
+        "Operator": 0,
+        "ComparisonValue": "false",
+        "CaseSensitive": false
+      }
+    ],
+    "Actions": [
+      {
+        "TargetProperty": "QTA_MATERIALE",
+        "Type": 1,
+        "Value": null,
+        "Formula": "(MAX(HEIGHT, WIDTH, LENGTH) / 1000) * (AVG(HEIGHT, WIDTH, LENGTH) / 1000)",
+        "InputProperties": [],
+        "ApplyRounding": true
+      }
+    ]
+  },
+  {
+    "RuleId": "66666666-6666-6666-6666-666666666666",
+    "Name": "QTA_MATERIALE_STANDARD",
+    "Description": "QTA_MATERIALE standard per parti non lamiera",
+    "IsActive": true,
+    "Priority": 500,
+    "Group": "QTA_MATERIALE",
+    "IsElse": true,
+    "StopProcessing": false,
+    "Conditions": [
+      {
+        "SourceProperty": "ISSHEETMETAL",
+        "Operator": 0,
+        "ComparisonValue": "false",
+        "CaseSensitive": false
+      }
+    ],
+    "Actions": [
+      {
+        "TargetProperty": "QTA_MATERIALE",
+        "Type": 1,
+        "Value": null,
+        "Formula": "LENGTH_MAX / 1000",
         "InputProperties": [],
         "ApplyRounding": true
       }

@@ -11,3 +11,8 @@ Questo repository contiene:
 per il controllo e il download degli aggiornamenti.
 
 Non contiene il codice sorgente dell'applicazione.
+
+
+PER DISINSTALARE L'ADDIN ELIMINA LA CARTELLA:
+
+%APPDATA%\Autodesk\Inventor 2025\Addins\ComponentManager

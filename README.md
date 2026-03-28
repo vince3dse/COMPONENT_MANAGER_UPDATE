@@ -16,3 +16,8 @@ Non contiene il codice sorgente dell'applicazione.
 PER DISINSTALARE L'ADDIN ELIMINA LA CARTELLA:
 
 %APPDATA%\Autodesk\Inventor 2025\Addins\ComponentManager
+
+Cartella licenza 
+%APPDATA%\Roaming\ComponentManager
+
+Nome Applicazione: Component Manager

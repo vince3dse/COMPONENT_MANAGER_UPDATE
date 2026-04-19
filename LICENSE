@@ -1,0 +1,165 @@
+LICENZA D’USO SOFTWARE
+COMPONENT MANAGER
+
+Versione Licenza: 1.0
+Data di efficacia: 12/12/2025
+Titolare del Software: VINCENZO BANCONE
+
+La presente Licenza d’Uso (“Licenza”) disciplina l’utilizzo del software denominato Component Manager (“Software”) da parte dell’utente finale o dell’azienda acquirente (“Licenziatario”).
+
+Installando, attivando o utilizzando il Software, il Licenziatario accetta integralmente le condizioni della presente Licenza.
+
+1. Oggetto della licenza
+
+Il Titolare concede al Licenziatario una licenza personale, non esclusiva, non trasferibile, non sublicenziabile e a tempo determinato per l’utilizzo del Software, esclusivamente nei limiti e secondo le condizioni indicate nella presente Licenza e nel relativo file di licenza .lic.
+
+Il diritto concesso riguarda esclusivamente l’uso del Software e non comporta alcun trasferimento della proprietà del Software, del codice, della documentazione o di altri diritti di proprietà intellettuale.
+
+2. Proprietà intellettuale
+
+Il Software, inclusi a titolo esemplificativo:
+
+codice sorgente e compilato,
+struttura logica e funzionale,
+interfaccia grafica,
+file di configurazione,
+documentazione,
+nome commerciale, marchi e contenuti associati,
+
+rimane di esclusiva proprietà del Titolare ed è protetto dalla normativa vigente in materia di diritto d’autore e proprietà intellettuale.
+
+3. File di licenza .lic
+
+L’utilizzo del Software è subordinato alla presenza di un file di licenza valido con estensione .lic.
+
+Il file .lic costituisce parte integrante delle condizioni di utilizzo del Software e può contenere, a titolo esemplificativo:
+
+nome dell’applicazione autorizzata;
+intestatario della licenza;
+azienda autorizzata;
+identificativo macchina o altri parametri di associazione;
+data di emissione;
+data di scadenza;
+vincoli di utilizzo;
+firma digitale o altro sistema di validazione.
+
+Il Software potrà verificare automaticamente la validità del file .lic prima dell’avvio o durante l’utilizzo.
+
+4. Durata della licenza
+
+La licenza è valida fino alla data di scadenza indicata nel file .lic.
+
+Decorso tale termine, il diritto di utilizzo del Software si intende automaticamente cessato, senza necessità di ulteriori comunicazioni da parte del Titolare.
+
+La presenza materiale del Software sul dispositivo del Licenziatario non attribuisce alcun diritto di utilizzo oltre la scadenza della licenza.
+
+5. Controllo di validità
+
+Il Licenziatario prende atto e accetta che il Software possa effettuare controlli tecnici automatici finalizzati a verificare:
+
+autenticità del file .lic;
+integrità del file .lic;
+corrispondenza tra licenza e applicazione autorizzata;
+corrispondenza tra licenza e dispositivo autorizzato;
+validità temporale della licenza;
+eventuali limitazioni o parametri previsti dal file di licenza.
+
+Nel caso in cui il file .lic risulti:
+
+assente,
+scaduto,
+alterato,
+non autentico,
+non compatibile con il dispositivo o con il Software,
+
+il Software potrà rifiutare l’avvio oppure limitare totalmente o parzialmente le proprie funzionalità.
+
+6. Divieti
+
+Salvo preventiva autorizzazione scritta del Titolare, è espressamente vietato al Licenziatario:
+
+copiare, distribuire, cedere, affittare, noleggiare o concedere a terzi il Software o il file .lic;
+modificare, alterare, decodificare, decompilare o disassemblare il Software;
+tentare di aggirare o neutralizzare i meccanismi di protezione, attivazione, firma o verifica della licenza;
+duplicare o riutilizzare il file .lic su dispositivi, utenti o installazioni non autorizzate;
+alterare i dati contenuti nel file .lic;
+utilizzare il Software oltre la data di scadenza indicata nella licenza;
+usare il Software per finalità contrarie alla legge o ai diritti di terzi.
+7. Licenza associata alla macchina o all’ambiente autorizzato
+
+Quando previsto dal file .lic, la licenza può essere associata a una specifica macchina, configurazione hardware, utente o ambiente autorizzato.
+
+In tali casi, il Software è utilizzabile esclusivamente nel contesto per il quale la licenza è stata emessa.
+Qualsiasi utilizzo su sistemi diversi da quelli autorizzati costituisce violazione della presente Licenza.
+
+8. Scadenza, sospensione e cessazione
+
+La licenza cessa automaticamente:
+
+alla data di scadenza indicata nel file .lic;
+in caso di file di licenza non più valido;
+in caso di violazione delle condizioni previste dalla presente Licenza;
+in caso di uso non autorizzato del Software o del file .lic.
+
+In caso di cessazione, il Licenziatario dovrà interrompere immediatamente ogni utilizzo del Software.
+
+Il Titolare potrà emettere, a propria discrezione, un nuovo file di licenza in caso di rinnovo, proroga o sostituzione.
+
+9. Aggiornamenti e rinnovi
+
+Salvo diverso accordo scritto, la scadenza della licenza non comporta alcun rinnovo automatico.
+
+Il rinnovo dell’utilizzo del Software richiede l’emissione di un nuovo file .lic o la sostituzione di quello esistente da parte del Titolare.
+
+Eventuali aggiornamenti software, manutenzione o supporto tecnico non sono inclusi automaticamente, salvo diverso accordo commerciale.
+
+10. Responsabilità
+
+Il Software viene fornito nello stato di fatto in cui si trova, senza garanzie espresse o implicite ulteriori rispetto a quelle inderogabili di legge.
+
+Il Titolare non garantisce che il Software:
+
+sia esente da errori;
+sia idoneo a esigenze particolari del Licenziatario;
+sia compatibile con ogni configurazione hardware o software;
+funzioni senza interruzioni.
+
+Il Licenziatario è tenuto a verificare preventivamente che il Software sia adatto alle proprie esigenze operative e a mantenere copie di sicurezza dei propri dati.
+
+Nei limiti massimi consentiti dalla legge, il Titolare non potrà essere ritenuto responsabile per danni indiretti, perdita di dati, perdita di produzione, mancato profitto, fermo operativo o altri danni derivanti dall’uso o dall’impossibilità di usare il Software.
+
+11. Riservatezza e protezione del file di licenza
+
+Il Licenziatario si impegna a custodire con diligenza il file .lic e a non divulgarlo, condividerlo o distribuirlo a soggetti non autorizzati.
+
+Il Licenziatario si impegna inoltre a non diffondere informazioni tecniche relative ai meccanismi di firma, validazione, attivazione o protezione del Software.
+
+12. Nessun trasferimento
+
+La presente licenza non può essere ceduta o trasferita a terzi senza preventiva autorizzazione scritta del Titolare.
+
+Anche il file .lic è personale o aziendale e non può essere riutilizzato fuori dai limiti per cui è stato rilasciato.
+
+13. Legge applicabile e foro competente
+
+La presente Licenza è regolata dalla legge italiana.
+
+Per ogni controversia relativa all’interpretazione, validità, esecuzione o cessazione della presente Licenza sarà competente in via esclusiva il Foro di [INSERIRE CITTÀ], salvo diversa previsione inderogabile di legge.
+
+14. Clausola finale
+
+Qualora una o più disposizioni della presente Licenza siano ritenute nulle o inefficaci, le restanti disposizioni resteranno pienamente valide ed efficaci.
+
+La mancata applicazione di una qualsiasi clausola da parte del Titolare non costituisce rinuncia ai relativi diritti.
+
+La presente Licenza costituisce l’intero accordo tra le parti in relazione all’utilizzo del Software.
+
+15. Accettazione
+
+Con l’installazione, l’attivazione o l’utilizzo di Component Manager, il Licenziatario dichiara di aver letto, compreso e accettato integralmente la presente Licenza d’Uso.
+
+Facoltativo: testo breve da mostrare nel programma
+
+Puoi anche mettere una versione breve dentro il form o nel messaggio iniziale:
+
+“Component Manager è concesso in licenza d’uso temporanea tramite file .lic. L’utilizzo del software è consentito esclusivamente con licenza valida, integra, autentica e non scaduta. È vietata qualsiasi copia, alterazione, distribuzione o aggiramento dei meccanismi di protezione. Alla scadenza della licenza il diritto d’uso cessa automaticamente.”

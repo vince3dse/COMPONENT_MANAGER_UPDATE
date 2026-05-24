@@ -3,7 +3,7 @@
   "LatestVersion": "3.0.17",
   "Mandatory": false,
   "ZipUrl": "https://raw.githubusercontent.com/vince3dse/COMPONENT_MANAGER_UPDATE/main/releases/ComponentManager_3.0.17.zip",
-  "Checksum": "5FB3F8956ACE9542009823623669D82C1FAEB3D59E13ADA2B18983C73FC61B59",
+  "Checksum": "911B85FCB0A869530C4FF01B5ABDF8EDAB67CA0312462179C81DA8339B0AE836",
   "Notes": "Release 3.0.17",
   "UpdaterCompatibility": 1,
   "PackageFormat": "flat-root",

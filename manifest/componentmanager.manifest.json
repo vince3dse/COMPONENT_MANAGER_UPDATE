@@ -10,6 +10,6 @@
   "InstallerExeName": "ComponentManager.Installer.exe",
   "InstallerArguments": "--apply-update",
   "ZipUrl": "https://raw.githubusercontent.com/vince3dse/COMPONENT_MANAGER_UPDATE/main/releases/ComponentManager_4.0.0.zip",
-  "Checksum": "417122CD5F0981D07F5A27FB854388EB3FD5B6DB3571A2560F044DFFC903C402",
+  "Checksum": "C3BBC0E3F88AA9864074C0D074365C1A3559CBF7807991111B40E569B1AFC8C4",
   "Notes": "Release 4.0.0"
 }

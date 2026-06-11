@@ -1,7 +1,7 @@
 {
   "AppId": "ComponentManager",
-  "LatestVersion": "4.4.5",
-  "RuntimeVersion": "4.4.5",
+  "LatestVersion": "4.4.6",
+  "RuntimeVersion": "4.4.6",
   "Mandatory": false,
   "PackageKind": "FullInstallAndRuntimeUpdate",
   "IncludesLoader": true,
@@ -9,7 +9,7 @@
   "RequiresInventorRestart": false,
   "InstallerExeName": "ComponentManager.Installer.exe",
   "InstallerArguments": "--apply-update",
-  "ZipUrl": "https://raw.githubusercontent.com/vince3dse/COMPONENT_MANAGER_UPDATE/main/releases/ComponentManager_4.4.5.zip",
-  "Checksum": "2486C72ACC7A76536E799C796DF89764931292F7A35F57EFB3BAD8C55BF231CF",
-  "Notes": "Release 4.4.5"
+  "ZipUrl": "https://raw.githubusercontent.com/vince3dse/COMPONENT_MANAGER_UPDATE/main/releases/ComponentManager_4.4.6.zip",
+  "Checksum": "5EDEB2704444CCE23220B7667ECECEC1DAC12C02CD383FB1549194883E3B435D",
+  "Notes": "Release 4.4.6"
 }
